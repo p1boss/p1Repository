@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		   
+		<script src="resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-theme="sap_bluecrystal">
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_mvi" theme -->
+
+		<script>
+		
+		var app = sap.m.App("myApp",{});
+		  
+		  var tilecont = new sap.m.TileContainer({
+		   tiles: [
+		    new sap.m.StandardTile({
+		       
+		       number : "1",
+		       title : "Patient Management",
+		       
+		     press:function(){
+		      app.to("page1");
+		     }
+		     
+		    }),
+		    new sap.m.StandardTile({
+			       
+			       number : "2",
+			       title : "Medical shop",
+			       
+			     press:function(){
+			      app.to("page1");
+			     }
+			     
+			    }),
+		    new sap.m.StandardTile({
+			       
+			       number : "3",
+			       title : "Doctor details",
+			       
+			     press:function(){
+			      app.to("page1");
+			     }
+			     
+			    })
+		   ]
+		   
+		  });
+		  app.addPage(tilecont);
+		  var l1 =  new sap.m.StandardTile({
+		          number : "1",
+		          title : "tile 1"
+		          });
+		  var l2 =  new sap.m.StandardTile({
+	          number : "2",
+	          title : "tile 2"
+	          });
+		  var l3 =  new sap.m.StandardTile({
+	          number : "3",
+	          title : "tile 3"
+	          });
+	  
+	         
+		  var page1 = new sap.m.Page("page1",{
+		   title: " Details",
+		   showNavButton:true,
+		   navButtonTap:function(){
+		    app.back();
+		   },
+		   content : [l1,l2,l3]
+		  });
+		  app.addPage(page1);
+		  app.placeAt("content");
+		  
+		  app.addPage(page2);
+		  
+		  
+		</script>
+
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>
